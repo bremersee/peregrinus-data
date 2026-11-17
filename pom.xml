@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.bremersee</groupId>
+		<artifactId>common-service-parent</artifactId>
+		<version>6.1.7</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<artifactId>peregrinus-data</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Peregrinus Data</name>
+	<description>Peregrinus Data Service</description>
+	<url>https://github.com/bremersee/peregrinus-data</url>
+
+	<properties>
+		<github.repo>peregrinus-data</github.repo>
+		<gh-pages-staging-dir>${project.build.directory}/staging</gh-pages-staging-dir>
+
+		<start-class>org.bremersee.peregrinus.Application</start-class>
+
+		<java.version>25</java.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>bremersee-releases</id>
+			<url>https://mvn-repo.eixe.bremersee.org/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>bremersee-snapshots</id>
+			<url>https://mvn-repo.eixe.bremersee.org/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<developers>
+		<developer>
+			<id>bremersee</id>
+			<name>Christian Bremer</name>
+			<organization>bremersee.org</organization>
+			<organizationUrl>https://bremersee.org</organizationUrl>
+			<email>christian@bremersee.org</email>
+			<timezone>Europe/Berlin</timezone>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<organization>
+		<name>bremersee.org</name>
+		<url>https://bremersee.org</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:ssh://git@github.com:bremersee/peregrinus-data.git</connection>
+		<developerConnection>
+			scm:git:ssh://git@github.com:bremersee/peregrinus-data.git
+		</developerConnection>
+		<url>https://github.com/bremersee/peregrinus-data</url>
+	</scm>
+
+	<issueManagement>
+		<url>https://github.com/bremersee/peregrinus-data/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>bremersee-releases</id>
+			<url>https://mvn-repo.eixe.bremersee.org/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>bremersee-snapshots</id>
+			<url>https://mvn-repo.eixe.bremersee.org/snapshots</url>
+		</snapshotRepository>
+		<site>
+			<id>bremersee-sites</id>
+			<url>https://bremersee.github.io/peregrinus-data/${project.version}</url>
+		</site>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-restclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<!-- Config client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aspectj</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.retry</groupId>
+			<artifactId>spring-retry</artifactId>
+		</dependency>
+
+		<!-- Eureka client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!-- Caffeine-backed LoadBalancer Cache -->
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>common-exception-spring-boot-web-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>spring-integration-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>spring-integration-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>spring-integration-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>spring-integration-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.bremersee</groupId>
+			<artifactId>spring-integration-security-ldaptive</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mongodb-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-restclient-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security-oauth2-resource-server-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-testcontainers</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers-junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers-mongodb</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>gateway</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<configuration>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>jdeb</artifactId>
+					<groupId>org.vafer</groupId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
