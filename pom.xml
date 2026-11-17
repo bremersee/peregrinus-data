@@ -10,15 +10,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>peregrinus-data</artifactId>
+	<artifactId>peregrinus-data-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Peregrinus Data</name>
+	<name>Peregrinus Data Service</name>
 	<description>Peregrinus Data Service</description>
-	<url>https://github.com/bremersee/peregrinus-data</url>
+	<url>https://github.com/bremersee/peregrinus-data-service</url>
 
 	<properties>
-		<github.repo>peregrinus-data</github.repo>
+		<github.repo>peregrinus-data-service</github.repo>
 		<gh-pages-staging-dir>${project.build.directory}/staging</gh-pages-staging-dir>
 
 		<start-class>org.bremersee.peregrinus.Application</start-class>
@@ -76,15 +76,15 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:ssh://git@github.com:bremersee/peregrinus-data.git</connection>
+		<connection>scm:git:ssh://git@github.com:bremersee/peregrinus-data-service.git</connection>
 		<developerConnection>
-			scm:git:ssh://git@github.com:bremersee/peregrinus-data.git
+			scm:git:ssh://git@github.com:bremersee/peregrinus-data-service.git
 		</developerConnection>
-		<url>https://github.com/bremersee/peregrinus-data</url>
+		<url>https://github.com/bremersee/peregrinus-data-service</url>
 	</scm>
 
 	<issueManagement>
-		<url>https://github.com/bremersee/peregrinus-data/issues</url>
+		<url>https://github.com/bremersee/peregrinus-data-service/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 
@@ -99,7 +99,7 @@
 		</snapshotRepository>
 		<site>
 			<id>bremersee-sites</id>
-			<url>https://bremersee.github.io/peregrinus-data/${project.version}</url>
+			<url>https://bremersee.github.io/peregrinus-data-service/${project.version}</url>
 		</site>
 	</distributionManagement>
 
@@ -281,7 +281,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>peregrinus-data</finalName>
+		<finalName>peregrinus-data-service</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>

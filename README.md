@@ -1,2 +1,3 @@
-# peregrinus-data
-Peregrinus Data
+# peregrinus-data-service
+
+Peregrinus Data Service
