@@ -281,7 +281,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>gateway</finalName>
+		<finalName>peregrinus-data</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
